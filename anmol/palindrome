@@ -1,0 +1,19 @@
+clear
+echo ""
+echo "______****** PALINDROME CHECK ******______"
+echo ""
+echo -n "Enter a string or number to check : "
+read n
+n1=$n
+new=`echo $n | rev`
+echo ""
+echo "The reverse of the enteered string ot number is : $new"
+echo ""
+
+if [ $new = $n1 ]
+then
+echo "It is a palindrome!!!"
+else
+echo "It is not a palindrome. Try aomething else!!!!!!!"
+fi
+echo ""

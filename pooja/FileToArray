@@ -1,0 +1,24 @@
+#!/bin/bash
+#copy words from file into array, file may be given either through command line or entered later
+
+if [ $# -eq 0 ]
+then
+   echo "No file given, enter filename"
+   read file
+else 
+   file=$1
+fi
+
+array=()
+
+while read LINE
+do
+   array+=($LINE)
+done < $file
+
+echo "Array:"
+echo "${array[@]}"
+echo ""
+echo "Enter index to find element at that particular position"
+read i
+echo "element at $i = ${array[$i]}"

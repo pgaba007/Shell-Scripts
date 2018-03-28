@@ -1,0 +1,59 @@
+clear
+echo ""
+echo -e "\033[1;30;47m-------###### INDIA ######-------_"
+echo ""
+for (( i=1;i<=10;i++ ))
+do
+	for (( j=1;j<=100;j++ ))
+	do
+		echo -ne "\033[40;31m *"
+	done
+	echo ""
+done
+for (( i=1;i<=10;i++ ))
+do
+		for (( k=1;k<=45;k++ ))
+		do
+			echo -ne "\033[0m *"
+		done
+		for (( l=1;l<=1;l++ ))
+		do
+			for (( n=1;n<=10;n++ ))
+			do
+				echo -n "  "
+			done
+		done
+		for (( m=1;m<=45;m++ ))
+		do
+			echo -ne " *"
+		done
+
+	echo ""
+done
+for (( i=1;i<=10;i++ ))
+do
+        for (( j=1;j<=100;j++ ))
+        do
+                echo -ne "\033[32m *"
+        done
+        echo ""
+done
+echo -e "\033[34m"
+
+awk -v X=17 -v Y=100 -v radius=5.5 'BEGIN{
+  pi=3.142857
+
+  for(i=0 ;i<=359 ;i++){
+    cmd=sprintf("tput cup %s %s", \
+      int(.5 + X + (sin(i*pi/180)*radius)), \
+      int(.5 + Y + (cos(i*pi/180)*radius)) )
+    system(cmd)
+    printf "*"
+  }
+  system("tput home")
+}'
+echo -e "\033[0m"
+for (( i=1;i<=40;i++ ))
+do
+echo ""
+done

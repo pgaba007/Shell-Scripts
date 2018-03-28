@@ -1,0 +1,23 @@
+#!/bin/bash
+#count number of words and letters in each line of a file that is given either through command line or entered later
+
+if [ $# -eq 0 ]
+then
+    echo "No file given in command line, enter filename"
+    read file
+else
+   file=$1
+fi
+
+lines=0
+while read LINE
+do
+    lines=$((lines+1))
+    echo "$LINE"
+    echo "number of words = $(echo $LINE | wc -w)"
+    echo "number of characters = $(echo $LINE | wc -m)"
+    echo ""
+   
+done < $file
+
+echo "number of lines in file = $lines"   

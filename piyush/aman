@@ -1,0 +1,14 @@
+PIYUSH
+anmol
+lakshay
+akshay
+$ adsnaskdnk% /
+$$$$$$$
+***
+////
+\\\\\
+I m DOING SED
+BTAU ABHI
+What if the thing you want to search for is a special character? If you wanted to find all lines
+containing the dollar character '$' then you cannot do grep '$' a_file as the '$' will be interpreted as a
+regexp and instead you will get all the lines which have anything as an end of line, ie all lines! The

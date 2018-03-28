@@ -1,0 +1,32 @@
+clear
+echo ""
+echo "________****** BASIC CALCULATOR ******________"
+echo ""
+echo -n "Enter first number : "
+read n1
+echo -n "Enter second number : "
+read n2
+echo ""
+echo "Available operations are : "
+echo "1 for Addition"
+echo "2 for Subtraction"
+echo "3 for Multiplication"
+echo "4 for Division"
+echo ""
+echo -n "Enter the operation number you want to perform : "
+read op
+z=0
+case $op in
+	1) z=`expr $n1 + $n2`;;
+	2) z=`expr $n1 - $n2`;;
+	3) z=`expr $n1 \* $n2`;;
+	4) z=`expr $n1 / $n2`;;
+	*) echo ""
+	echo "Select a valid operator from above choices!!" 
+	echo ""
+	exit 1 ;;
+esac
+echo ""
+echo "Answer is : $z"
+echo ""
+ 

@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+echo "Write your question (eg. x + y (with spaces))"
+read eq
+a=$(echo $eq | cut -d' ' -f1)
+op=$(echo $eq | cut -d' ' -f2)
+b=$(echo $eq | cut -d' ' -f3)
+ 
+case "$op"
+in
+  "+") echo $((a + b))
+       ;;
+  "-") echo $((a - b))
+       ;;
+  "*") echo $((a * b))
+       ;;
+  "/") echo $((a / b))
+       ;;
+  *) echo "invalid"
+      ;;
+esac

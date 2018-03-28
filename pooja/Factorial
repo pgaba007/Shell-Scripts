@@ -1,0 +1,12 @@
+#!/bin/bash
+#factorial of a given number
+echo "Enter number"
+read n
+i=$n
+fact=1
+while [ $i -gt 0 ]
+do
+  fact=$((fact \* i))
+  i=$((i-1))    
+done
+echo "factorial of $n is $fact"

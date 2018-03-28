@@ -1,0 +1,39 @@
+#!/bin/bash
+#sorting an array
+
+echo "Enter array size"
+read n
+echo "Enter array elements"
+for (( i = 0; i < $n; i++ ))
+do
+   printf "element $i: "
+   read array[$i]
+done
+
+echo "Original array:"
+for i in "${array[@]}"
+do
+  printf "$i\t"
+done
+echo ""
+
+for (( i = 0; i < $n; i++ ))
+do
+  for(( j = $((i+1)); j < $n ; j++ ))
+     do 
+       if [ ${array[i]} -gt ${array[$j]} ]
+       then 
+           t=${array[$i]}
+           array[i]=${array[$j]}
+           array[j]=$t;
+       fi
+     done
+done
+
+echo "Sorted array:"
+for i in "${array[@]}" 
+do
+   printf "$i\t"
+done
+echo " "
+  

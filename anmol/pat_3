@@ -1,0 +1,19 @@
+clear
+echo ""
+echo "_____****** CIRCLE ******_____"
+echo -e "\033[34m"
+
+awk -v X=20 -v Y=40 -v radius=6 'BEGIN{
+  pi=3.142857
+  
+  for(i=0 ;i<=359 ;i++){
+    cmd=sprintf("tput cup %s %s", \
+      int(.5 + X + (sin(i*pi/180)*radius)), \
+      int(.5 + Y + (cos(i*pi/180)*radius)) )
+    system(cmd)
+    printf "*"
+  }
+  system("tput home")
+}'
+
+echo ""

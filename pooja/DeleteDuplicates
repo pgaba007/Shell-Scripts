@@ -1,0 +1,33 @@
+#!/bin/bash
+#copy contents of a file to another removing duplicates
+
+if [ $# -eq 0 ]
+then
+    echo "No file specified, enter filename:"
+    read file
+else
+    file=$1
+fi
+
+if [ -e noDuplicates.txt ]
+then 
+    rm noDuplicates.txt
+fi
+
+touch noDuplicates.txt
+
+cat $file | sort |
+while read LINE
+do
+  if [[ $LINE != $PREV ]]
+  then 
+      echo $LINE >> noDuplicates.txt
+  fi
+  PREV=$LINE
+done
+echo ""
+echo "Original file"
+cat duplicates.txt
+echo ""
+echo "New file"
+cat noDuplicates.txt

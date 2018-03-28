@@ -1,0 +1,19 @@
+#!/bin/bash
+#print fibonacci series until given number of elements
+
+echo "Enter how many numbers to print"
+read n
+a=0
+b=1
+printf "$a\t"
+printf "$b\t"
+i=2
+while [ $i -lt $n ]
+do
+  c=$((a+b))
+  i=$((i+1))
+  printf "$c\t"
+  a=$b
+  b=$c    
+done
+echo ""

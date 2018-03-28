@@ -1,0 +1,22 @@
+clear
+echo ""
+echo "______****** PRIME NUMBER CHECK ******______"
+echo ""
+echo -n "Enter a number to check whether it is prime or not : "
+read num
+echo ""
+if [ $num -eq 1 ]
+then
+	echo "1 is neither prime nor composite"
+else
+	num_factor=`factor $num | wc -w`
+	echo "$num has $num_factor prime factors in total (including 1)."
+	echo ""
+	if [ $num_factor -eq 2 ]
+	then
+		echo "$num is a prime number."
+	else
+		echo "Oops!!! Not prime. Try something else."
+	fi
+fi
+echo ""

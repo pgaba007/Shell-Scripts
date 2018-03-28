@@ -1,0 +1,24 @@
+#!/bin/bash
+#Delete all empty directories (no files) and files (no lines)
+
+for file in $(find rem -type f)
+do
+       size=$(cat $file | wc -l)
+       if [[ $size -eq 0 ]]
+       then
+            rm $file
+            echo "File $file removed"
+       fi
+done
+
+for dir in $(find rem -type d)
+do
+        size=$(ls $dir | wc -l)
+        echo "$dir $size"
+        if [[ $size -eq 0 ]]
+        then
+            rmdir $dir
+            echo "Directory $dir removed"
+        fi
+done
+

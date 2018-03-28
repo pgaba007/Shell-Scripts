@@ -1,0 +1,16 @@
+clear 
+echo ""
+echo "______****** PATTERN ******______"
+echo ""
+for i in {1..6}
+do
+	j=${j}${i}
+	echo ${j}
+done
+for i in {6..1}
+do
+        j=${j}${i}
+        echo ${j}
+done
+
+echo ""

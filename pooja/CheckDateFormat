@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+echo "Enter Date(dd-mm-yyyy)"
+read date
+ 
+if [[ $date =~ ^[0-9][1-9]-[0-9][1-9]-[1-9]{4}$ ]]
+then 
+    echo "$date is in valid format"
+else
+    echo "$date is in invalid format"
+fi

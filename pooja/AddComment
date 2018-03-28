@@ -1,0 +1,11 @@
+#!/bin/bash
+#comment out specific lines in a file
+echo "Enter filename:"
+read file
+
+
+sed -i '^[0-9] s/^/#/' $file
+
+cat $file
+
+

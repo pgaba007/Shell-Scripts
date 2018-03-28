@@ -1,0 +1,23 @@
+#!/bin/bash
+#Copy only those lines from one file to another that contain an integer value 
+
+echo "Enter file name: "
+read file
+if [ -e newFile.txt ]
+then
+     rm newFile.txt
+fi
+
+touch newFile.txt
+cat newFile.txt
+
+while read LINE
+do
+   if [[ $LINE =~ ^.*[0-9].*$ ]]
+   then
+       echo "$LINE" >> newFile.txt
+   fi
+done < $file
+
+echo "new file content: "
+cat newFile.txt

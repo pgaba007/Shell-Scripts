@@ -1,0 +1,23 @@
+clear
+echo ""
+echo "______****** Sorting Salaries and finding highest & lowest salary ******______"
+echo ""
+echo -n "Enter number of salaries you want to compare : "
+read num
+echo ""
+echo -n "" > file1
+echo -n "" > file2
+for (( i=0;i<$num;i++ ))
+do 
+read value
+echo $value >> file1
+done
+sort -n file1 >> file2
+echo ""
+
+echo -n "Highest salary is : "
+tail -n1 file2
+echo ""
+echo -n "Lowest salary is : "
+head -n1 file2
+echo ""

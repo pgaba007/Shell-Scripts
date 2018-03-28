@@ -1,0 +1,30 @@
+clear
+echo ""
+echo "_____****** FIBONACCI SERIES ******_____"
+echo ""
+echo -n "Enter the number of terms of series you want to see : "
+read num
+first=0
+second=1
+echo "" 
+echo -n "Fibonacci series is : "
+echo "" > series
+if [ $num -eq 1 ]
+then
+echo $first > series
+elif [ $num -eq 2 ]
+then 
+echo -n $first $second > series
+else
+echo -n $first $second > series
+for (( i=2; i<$num; i++ ))
+do
+ans=`expr $first + $second`
+echo -n " $ans" >> series
+first=$second;
+second=$ans;
+done
+fi
+cat series
+echo ""
+echo ""

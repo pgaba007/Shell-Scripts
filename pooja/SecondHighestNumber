@@ -1,0 +1,28 @@
+#!/bin/bash
+#print second highest element of a given array
+echo "Enter size of array"
+read n
+
+echo "Enter elements"
+for (( i = 0; i < $n; i++ )) 
+do
+  printf "element $i: "
+  read array[$i]
+done
+
+high=0
+secHigh=0
+
+for i in "${array[@]}"
+do
+  if [ $i -gt $high ]
+  then
+      secHigh=$high
+      high=$i
+  elif [ $i -gt $secHigh -a $i -ne $high ]
+  then  
+      secHigh=$i
+  fi
+done
+echo "second highest element is $secHigh"
+
